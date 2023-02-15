@@ -1,7 +1,16 @@
 document.getElementById("btn-phone-plus").addEventListener("click", function () {
-  plusBtn("phone-number-field");
+  const phoneBuy = plusBtn("phone-number-field");
+  phonePrice(phoneBuy);
 });
 
 document.getElementById("btn-phone-minus").addEventListener("click", function () {
-  minusBtn("phone-number-field");
+  const phoneBuy = minusBtn("phone-number-field");
+  phonePrice(phoneBuy);
 });
+
+const phoneCurrentAmount = stringToNumber("phone-total");
+
+function phonePrice(priceID) {
+  const priceValue = document.getElementById("phone-total");
+  priceValue.innerText = priceID * phoneCurrentAmount;
+}
