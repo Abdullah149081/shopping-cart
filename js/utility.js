@@ -5,6 +5,7 @@ function plusBtn(plusButton) {
 
   const plus = inputFieldValue + 1;
   inputField.value = plus;
+  return plus;
 }
 
 function minusBtn(minusButton) {
@@ -18,4 +19,12 @@ function minusBtn(minusButton) {
     setAttribute("disable");
   }
   inputFieldMinus.value = minus;
+  return minus;
+}
+
+function stringToNumber(number) {
+  const numberGet = document.getElementById(number).innerText;
+  let numberConvertValue = numberGet;
+  numberConvertValue = parseInt(numberConvertValue);
+  return numberConvertValue;
 }
