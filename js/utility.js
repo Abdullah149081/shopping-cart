@@ -4,7 +4,15 @@ function plusBtn(plusButton) {
   inputFieldValue = parseInt(inputFieldValue);
 
   const plus = inputFieldValue + 1;
+
+  const btn = document.getElementById("btn-phone-plus");
+  if (inputFieldValue === 5) {
+    alert("Sorry");
+    btn.setAttribute("disabled");
+  }
+
   inputField.value = plus;
+
   return plus;
 }
 
@@ -27,4 +35,20 @@ function stringToNumber(number) {
   let numberConvertValue = numberGet;
   numberConvertValue = parseInt(numberConvertValue);
   return numberConvertValue;
+}
+
+function phoneCaseAmount(convert) {
+  const convertAmountNumber = document.getElementById(convert);
+  let amountGet = convertAmountNumber.innerText;
+  amountGet = parseInt(amountGet);
+  return amountGet;
+}
+
+function phoneCaseSum() {
+  const phoneCurrentAmount = phoneCaseAmount("phone-total");
+  const caseCurrentAmount = phoneCaseAmount("case-total");
+  const sumPhoneCase = phoneCurrentAmount + caseCurrentAmount;
+
+  const subTotal = document.getElementById("sub-total");
+  subTotal.innerText = sumPhoneCase;
 }
