@@ -55,6 +55,9 @@ function phoneCaseSum() {
   let taxAmountCon = taxAmount;
   taxAmountCon = parseFloat(taxAmountCon);
   setAmount("tax-amount", taxAmountCon);
+
+  const totalAmount = sumPhoneCase + taxAmountCon;
+  setAmount("final-total", totalAmount);
 }
 
 function setAmount(amountSetId, value) {
