@@ -49,6 +49,15 @@ function phoneCaseSum() {
   const caseCurrentAmount = phoneCaseAmount("case-total");
   const sumPhoneCase = phoneCurrentAmount + caseCurrentAmount;
 
-  const subTotal = document.getElementById("sub-total");
-  subTotal.innerText = sumPhoneCase;
+  setAmount("sub-total", sumPhoneCase);
+
+  const taxAmount = (sumPhoneCase * 0.1).toFixed(2);
+  let taxAmountCon = taxAmount;
+  taxAmountCon = parseFloat(taxAmountCon);
+  setAmount("tax-amount", taxAmountCon);
+}
+
+function setAmount(amountSetId, value) {
+  const subTotal = document.getElementById(amountSetId);
+  subTotal.innerText = value;
 }
